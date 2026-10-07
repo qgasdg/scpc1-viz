@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SCPC1 문제 읽기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="stage mode-input" id="stage">
+
+    <!-- 문제 입력 -->
+    <section class="pane input" id="input">
+      <header class="input-head">
+        <h1>문제 입력</h1>
+        <span class="tag" id="taskLabel"></span>
+      </header>
+      <div class="input-body">
+        <div class="col">
+          <div class="blk" data-field="prompt">
+            <div class="blk-title">prompt <span>사용자가 지금 한 말</span></div>
+            <div class="prompt" id="prompt"></div>
+          </div>
+          <div class="blk" data-field="history">
+            <div class="blk-title">visible_history <span>이전 대화 요약</span></div>
+            <div class="history" id="history"></div>
+          </div>
+          <div class="blk" data-field="memory">
+            <div class="blk-title">personal_memory <span>사용자 장기 기억</span></div>
+            <div class="empty">[] 비어 있음</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="blk" data-field="objects">
+            <div class="blk-title">device_state.objects <span>기기 속 후보 객체</span></div>
+            <div class="objects" id="objects"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="blk" data-field="records">
+            <div class="blk-title">device_state.records <span>시스템이 남긴 신호</span></div>
+            <div class="records" id="records"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 판단 -->
+    <section class="pane judge" id="judge">
+      <nav class="axes" id="axes"></nav>
+      <div class="view" id="view"></div>
+    </section>
+
+</div>
+
+<svg class="arrows" id="arrows" aria-hidden="true">
+  <defs>
+    <marker id="head-keep" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5fd68a"/></marker>
+    <marker id="head-look" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5ad1e6"/></marker>
+    <marker id="head-c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/></marker>
+    <marker id="head-drop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a8"/></marker>
+  </defs>
+</svg>
+
+<footer class="stepper">
+  <div class="stepper-bar"><i id="stepBar"></i></div>
+  <div class="stepper-text">
+    <span id="stepName"></span>
+    <span class="stepper-hint">스크롤 · ↑↓ 키로 한 단계씩</span>
+    <span id="stepNum"></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
